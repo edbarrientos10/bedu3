@@ -26,6 +26,10 @@ for (let model of models) {
   model(sequelize);
 }
 
+//sequelize.sync({ force: false }) DESCOMENTAR CUANDO AGREGUE NUEVOS MODELOS
+  //.then(() => console.log("Tableas creadas"));
+
+
 // Configuring relations
 const { products, reviews } = sequelize.models;
 reviews.belongsTo(products); // Relation one-to-one in reviews table
